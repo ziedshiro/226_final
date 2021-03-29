@@ -7,12 +7,13 @@ int main()
     for(i=0;i<x;i++)
         for(j=0;j<x;j++)
             scanf("%d",&a[i][j]);
-    /*for(i=0;i<y;i++)
+    for(i=0;i<y;i++)
         for(j=0;j<y;j++)
-    scanf("%d",&b[i]);
+            scanf("%d",&b[i]);
     for(i=0;i<z;i++)
         for(j=0;j<z;j++)
-    scanf("%d",&c[i]);*/
+            scanf("%d",&c[i]);
+    ans=0,dd=0,df=0,db=0;
     for(i=0;i<x;i++)
     {
         r[i]=0;
@@ -46,7 +47,81 @@ int main()
         }
     }
     if(ans==1&&dd==1)
-        printf("no");
+        printf("no\n");
     else
-        printf("yes");
+        printf("yes\n");
+    ans=0,dd=0,df=0,db=0;
+    for(i=0;i<x;i++)
+    {
+        r[i]=0;
+        cl[i]=0;
+    }
+    for(i=0;i<y;i++)
+        for(j=0;j<y;j++)
+            r[i]+=b[i][j];
+    for(i=0;i<y;i++)
+        for(j=0;j<y;j++)
+            cl[i]+=b[j][i];
+    for(i=0;i<y;i++)
+        for(j=0;j<y;j++)
+            if(i==j)
+                df+=b[i][j];
+    for(i=0;i<y;i++)
+        for(j=y-1;j>=0;j--)
+            if(i==j)
+                db+=b[i][j];
+    if(df==db)
+        dd=1;
+    else
+        dd=0;
+    for(i=0;i<y;i++)
+    {
+        if(r[i]==cl[i])
+            ans=1;
+        else
+        {
+            ans=0;break;
+        }
+    }
+    if(ans==1&&dd==1)
+        printf("no\n");
+    else
+        printf("yes\n");
+    ans=0,dd=0,df=0,db=0;
+    for(i=0;i<z;i++)
+    {
+        r[i]=0;
+        cl[i]=0;
+    }
+    for(i=0;i<z;i++)
+        for(j=0;j<z;j++)
+            r[i]+=c[i][j];
+    for(i=0;i<z;i++)
+        for(j=0;j<z;j++)
+            cl[i]+=c[j][i];
+    for(i=0;i<z;i++)
+        for(j=0;j<z;j++)
+            if(i==j)
+                df+=c[i][j];
+    for(i=0;i<z;i++)
+        for(j=z-1;j>=0;j--)
+            if(i==j)
+                db+=c[i][j];
+    if(df==db)
+        dd=1;
+    else
+        dd=0;
+    for(i=0;i<z;i++)
+    {
+        if(r[i]==cl[i])
+            ans=1;
+        else
+        {
+            ans=0;break;
+        }
+    }
+    if(ans==1&&dd==1)
+        printf("no\n");
+    else
+        printf("yes\n");
 }
