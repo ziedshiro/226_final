@@ -3,7 +3,9 @@ int main()
 {
     int i,n,j,x,y;
     scanf("%d",&n);
-    int N[n],max[n];
+    int N[n],max[n],ct[n];
+    for(i=0;i<n;i++)
+        ct[i]=0;
     for(i=0;i<n;i++)
         scanf("%d",&N[i]);
     for(i=0;i<n;i++)
