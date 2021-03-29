@@ -42,9 +42,9 @@ int mgs(int n)
 int chk(int n)
 {
     if(n==1)
-        printf("no");
+        printf("no\n");
     else
-        printf("yes");
+        printf("yes\n");
 }
 int main()
 {
@@ -56,7 +56,4 @@ int main()
     chk(a);
     chk(b);
     chk(c);
-
-
-
 }
