@@ -23,6 +23,10 @@ int main()
     }
     }
     for(i=0;i<n;i++)
-        printf("%d",max[i]);
+        {
+            if(max[i]==max[i+1])
+                ct[i]++;
+        }
+
 
 }
