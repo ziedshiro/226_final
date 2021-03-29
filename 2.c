@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int i,n,j,x,y,mx,k=0;
+    int i,n,j,x,y=0,mx,k=0;
     scanf("%d",&n);
     int N[n],max[n],ct[n];
     for(i=0;i<n;i++)
@@ -25,18 +25,24 @@ int main()
     for(i=0;i<n;i++)
         {
             if(max[i]==max[i+1])
-                ct[i]++;
+                ct[y]++;
+            else
+                y=i;
         }
         mx=ct[0];
     for(i=0;i<n;i++)
         if(mx<ct[i])
         {
             mx=ct[i];
-            k=i;
         }
-    for(i=0;i<n;i++)
+    /*for(i=0;i<n;i++)
     {
-        //if(mx==ct[i])
-    }
+        if(mx==ct[i])
+        {
+            printf("%d ",max[i]);
+        }
+    }*/
+    for(i=0;i<n;i++)
+        printf("%d ",ct[i]);
 
 }
