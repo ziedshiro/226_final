@@ -48,10 +48,11 @@ int chk(int n)
 }
 int main()
 {
-    int x,y,z;
+    int x,y,z,a;
     scanf("%d %d %d",&x,&y,&z);
-    chk(mgs(x));
-    chk(mgs(y));
-    chk(mgs(z));
+    a=mgs(x);
+    printf("%d",a);
+
+
 
 }
