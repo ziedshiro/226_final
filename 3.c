@@ -1,7 +1,7 @@
 #include<stdio.h>
-int mgs(int n,int *ans)
+int mgs(int n)
 {
-    int i,j,N[n][n],dd=0,df=0,db=0,r[n],cl[n];
+    int i,j,N[n][n],ans,dd=0,df=0,db=0,r[n],cl[n];
     for(i=0;i<n;i++)
         for(j=0;j<n;j++)
             scanf("%d",&N[i][j]);
@@ -48,12 +48,10 @@ int chk(int n)
 }
 int main()
 {
-    int x,y,z,a,b,c;
+    int x,y,z;
     scanf("%d %d %d",&x,&y,&z);
-    mgs(x,a);
-    chk(a);
-    printf("%d",a);
-    //mgs(y);
-    //mgs(z);
+    chk(mgs(x));
+    chk(mgs(y));
+    chk(mgs(z));
 
 }
