@@ -26,8 +26,8 @@ int main()
         {
             if(max[i]==max[i+1])
                 ct[y]++;
-            else
-                y=i;
+            if(max[i]!=max[i+1])
+                y=i+1;
         }
         mx=ct[0];
     for(i=0;i<n;i++)
@@ -35,14 +35,11 @@ int main()
         {
             mx=ct[i];
         }
-    /*for(i=0;i<n;i++)
+    for(i=0;i<n;i++)
     {
         if(mx==ct[i])
-        {
             printf("%d ",max[i]);
-        }
-    }*/
-    for(i=0;i<n;i++)
-        printf("%d ",ct[i]);
+    }
+
 
 }
